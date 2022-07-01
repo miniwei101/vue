@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <style>
+
+            .myvideo{
+                width: 50%;
+                border-radius: 8%;
+                border: 3px solid gray;
+
+            }
+
+            button::before{
+                content: attr(btntext);
+                color: brown;
+                text-shadow: 1px 2px 3px;
+            }
+
+        </style>
+
+    <title></title>
+    </head>
+
+    <body>
+       
+       <!-- <video controls class="myvideo"> -->
+            <video class="myvideo">    
+            <source src="videos/fish.mp4" type="video/mp4">
+            <source src="videos/fish.webm" type="video/webm">
+        </video>
+        <div>
+            <button btntext="PLAY"></button>
+            <button btntext="STOP"></button>
+        </div>
+
+        <script>
+
+            //宣告常數物件
+            const video=document.querySelector('video');
+            const btn=document.getElementsByTagName('button');
+            const play=btn[0];
+            const stop=btn[1];
+
+            //監聽
+            play.addEventListener('click',videoPlayPause);
+            stop.addEventListener('click',videoStop);
+
+            //控制video暫停或撥放
+            function videoPlayPause(){
+                if(video.paused){ //true, false
+                    play.setAttribute('btntext','PAUSE');
+                    video.play(); //呼叫播放方法
+                }else{
+                    play.setAttribute('btntext','PLAY');
+                    video.pause(); //呼叫暫停方法
+                }      
+            }
+
+            function videoStop(){
+                video.pause();
+                video.currentTime=0; 
+                play.setAttribute('btntext','PLAY');
+            }
+
+        </script>
+
+    </body>
+
+</html>

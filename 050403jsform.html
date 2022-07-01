@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   
+    <title></title>
+    </head>
+
+     <body>
+       
+        <input type="text"id="name" placeholder="ENter Name"><br>
+        <input type="number"id="chi" placeholder="ENter CHI"><br>
+        <input type="number"id="eng" placeholder="ENter ENG"><br>
+        <input type="number"id="math" placeholder="ENter MATH"><br>
+
+        <button id="calc" onclick="score()">CALC</button>
+        <p id="result"></p>
+
+        <script>
+
+            //宣告變數
+            var name="";
+            var chi=0;
+            var eng=0;
+            var math=0;
+
+            var total=0;
+            var ave=0;
+            var ispass=flase;
+
+            // var total=chi+eng+math;
+            // var ave=total/3;
+
+            name=document.getElementById('name').value
+            
+
+            //條件流程控制
+            if(ave>=60)
+                ispass=true;
+            else
+                ispass=false;
+
+            document.write("NAME" + name+ "<br>");
+            document.write("CHI" + chi + "<br>");
+            document.write("ENG" + eng + "<br>");
+            document.write("MATH" + math + "<br>");
+            document.write("TOTAL" + total + "<br>");
+            document.write("AVERAGE" + ave + "<br>");
+            document.write("IS PASS" + ispass + "<br>");
+
+        </script>
+
+    </body>
+
+</html>
